@@ -1,0 +1,30 @@
+<html>
+<h2>Reverse text using JavaScript</h2>
+<script>
+function reverse(form) {
+var text = "";
+var str = form.rev.value;
+//This is to check for if the word has 5 characters or not.
+if(str.length !==5){
+   alert("The string you entered "+str+" does not contain 5 characters");   
+}
+
+else{
+for (i = 0; i <= str.length; i++)
+text = str.substring(i, i+1) + text;
+form.rev.value = text;
+// The new window
+var myWindow = window.open("", "result", "width=800,height=800");
+myWindow.document.write("<p>Input:- </p>");
+myWindow.document.write(form.rev.value);
+myWindow.document.write("<p>output:- </p>");
+myWindow.document.write(str);
+
+}
+}
+</script>
+<form>
+<input type="text" name="rev">
+<input type="button" value="Reverse" onClick="reverse(this.form)">
+</form>
+</html>
